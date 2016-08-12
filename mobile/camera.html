@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<video autoplay></video>
+<script>
+    (function(){
+        var video = document.querySelector('video');
+        var onFailSoHard = function(e) {
+            console.log('Reeeejected!', e);
+        };
+
+        if (navigator.getUserMedia) {
+            navigator.getUserMedia({audio: true, video: true}, function(stream) {
+                video.src = stream;
+            }, onFailSoHard);
+        } else if (navigator.webkitGetUserMedia) {
+            navigator.webkitGetUserMedia({audio: true, video: true}, function(stream) {
+                video.src = window.URL.createObjectURL(stream);
+            }, onFailSoHard);
+        } else {
+            video.src = 'somevideo.webm'; // fallback.
+        }
+
+        console.log('%c aaaaa','color:red;font-size:34px;');
+        console.log("%c \u5b89\u5168\u8b66\u544a\uff01","font-size:50px;color:red;-webkit-text-fill-color:red;-webkit-text-stroke: 1px black;")
+    }());
+
+</script>
+<script type="text/javascript">
+    (function(){
+        function hasGetUserMedia() {
+            // Note: Opera builds are unprefixed.
+            return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia || navigator.msGetUserMedia);
+        }
+
+        if (hasGetUserMedia()) {
+            // Good to go!
+        } else {
+            alert('getUserMedia() is not supported in your browser');
+        }
+    })(this)
+</script>
+</body>
+</html>
