@@ -1,0 +1,22 @@
+{
+  "name": "vuewebpackproject",
+  "version": "0.0.1",
+  "description": "practice vue and module bundler such as webpack\\",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://profoundsoul:qiulin20090709@github.com/profoundsoul/vue_webpack.git"
+  },
+  "author": "profoundsoul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/profoundsoul/vue_webpack/issues"
+  },
+  "homepage": "https://github.com/profoundsoul/vue_webpack#readme",
+  "devDependencies": {
+    "vue": "^1.0.26"
+  }
+}
