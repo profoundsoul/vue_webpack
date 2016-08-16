@@ -20,7 +20,6 @@
             newAddr:'',
             addrList:[{name:'linq'}],
             ismulti:false
-
         },
         methods:{
             addAddr:function(a,b,c,d) {
@@ -31,9 +30,11 @@
                 }
                 if(this.addrList.length>5) {
                     this.ismulti = true;
+                }else{
+                    this.ismulti = false;
                 }
                 this.getLog();
-//                console.log('add', this.newAddr);
+//              console.log('add', this.newAddr);
             },
             getLog:function(){
                 console.log('get log');
@@ -41,7 +42,9 @@
             removeAddr:function(a,b,c,d) {
                 console.log('remove');
                 this.addrList.splice(a,1);
-
+                if(this.addrList.length>5){
+                    this.ismulti = false;
+                }
             }
         }
     });
