@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实例篇</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="data">
+    {{a}}
+</div>
+<section id="lifecycle">
+    {{{innerH}}}
+</section>
+<script>
+    var d = {a:1};
+    (function(){
+        var vm = new Vue({
+            el:'#data',
+            data:d
+        });
+        console.log(d===vm.$data,d,vm.$data);
+        var el = document.querySelector('#data');
+        console.log(vm.$el === el,vm.$el, el);
+        d.a = 2;
+
+        vm.$watch('a',function(newV, oldV) {
+            console.log(oldV,newV);
+        })
+    }());
+</script>
+<script>
+    (function(){
+        var vm = new Vue({
+//            template:'<div>this is template content</div>',
+            el:'#lifecycle',
+            data:{
+                innerH:'<hr/><br/><p>this is  my paragraph !</p>'
+            },
+            init:function() {
+                console.log('init');
+            },
+            created:function() {
+                console.log('create', this.innerH);
+            },
+            beforeCompile:function() {
+                console.log('beforeCompile');
+            },
+            compiled:function(){
+                console.log('compiled');
+            },
+            ready:function() {
+                console.log('ready');
+            },
+            attached:function(){
+                console.log('attached');
+            },
+            beforeDestory:function(){
+                console.log('beforeDestory');
+            },
+            destoryed:function(){
+                console.log('destoryed');
+            }
+
+
+        });
+    }());
+</script>
+</body>
+</html>

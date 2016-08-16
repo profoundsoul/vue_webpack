@@ -42,7 +42,7 @@
             removeAddr:function(a,b,c,d) {
                 console.log('remove');
                 this.addrList.splice(a,1);
-                if(this.addrList.length>5){
+                if(this.addrList.length<=5){
                     this.ismulti = false;
                 }
             }
