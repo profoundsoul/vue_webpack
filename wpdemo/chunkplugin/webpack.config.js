@@ -6,14 +6,15 @@ var webpack = require("webpack");
 module.exports={
     entry:{
         a:'./a',
-        b:'./b',
-        util:'./util'
+        b:'./b'
     },
     output:{
         path:'./dist',
-        filename:'[name].js'
+        publicPath:'./dist/',
+        filename:'[name].[chunkhash:8].js',
+        chunkFilename:'[name].chunk.js'
     },
     plugins:[
-        new webpack.optimize.CommonsChunkPlugin('common-util.js', ['util'])
+        new webpack.optimize.CommonsChunkPlugin('commin.js')
     ]
 };

@@ -1,1 +1,0 @@
-webpackJsonp([3,2],[function(n,r){var t=function(){return location.href},e=function(){return location.search};n.exports={getUrl:t,getSearch:e}}]);
