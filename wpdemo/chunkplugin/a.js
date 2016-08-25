@@ -3,12 +3,12 @@
  */
 var instance = require('./base');
 var util = require('./util');
-
+var popup = require('./popup');
 
 require.ensure(['./c'], function(require){
     var cc = require('./c');
     console.log(cc.getCurrentUser());
-},'a.demand');
+});
 
 module.exports = {
     name:'linq',

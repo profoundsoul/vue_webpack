@@ -10,7 +10,7 @@ webpackJsonp([2],[
 	var util = __webpack_require__(2);
 
 	__webpack_require__.e/* nsure */(1/* duplicate */, function(require){
-	    var cc = __webpack_require__(3);
+	    var cc = __webpack_require__(4);
 	    console.log(cc.getCurrentUser());
 	});
 

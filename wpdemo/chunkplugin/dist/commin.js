@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + ({"0":"a","1":"a.demand","2":"b"}[chunkId]||chunkId) + ".chunk.js";
+/******/ 			script.src = __webpack_require__.p + "" + ({"0":"a","2":"b"}[chunkId]||chunkId) + ".chunk.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

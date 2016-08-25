@@ -8,7 +8,7 @@ var util = require('./util');
 require.ensure(['./c'], function(require){
     var cc = require('./c');
     console.log(cc.getCurrentUser());
-},'b.demand');
+});
 
 module.exports={
     name:'check',
