@@ -16,5 +16,10 @@ module.exports={
     },
     plugins:[
         new webpack.optimize.CommonsChunkPlugin('commin.js')
-    ]
+    ],
+    devServer:{
+        noInfo:true,
+        historyApiFallback:true,
+        port:8089
+    }
 };
