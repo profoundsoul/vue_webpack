@@ -1,5 +1,6 @@
 
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports={
 	entry:{
 		app:'./src/main'
@@ -19,5 +20,11 @@ module.exports={
 				exclude:/node_modules/
 			}
 		]
+	},
+	vue:{
+		loaders:{
+			css:ExtractTextPlugin.extract('css'),
+			sass:ExtractTextPlugin.extract('css!sass-loader')
+		}
 	}
 };

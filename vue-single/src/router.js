@@ -3,7 +3,7 @@ export default (router)=>{
 		'/':{
 			name:'index',
 			component:(resolve)=>{
-				require(['./src/index.vue'], resolve)
+				require(['./views/index.vue'], resolve)
 			}
 		}
 	});
