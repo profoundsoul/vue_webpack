@@ -3,7 +3,7 @@
 	<div>{{describe}}</div>
 </template>
 <script >
-	exports default {
+	export default {
 		data (){
 			return {
 				title:'this is index',

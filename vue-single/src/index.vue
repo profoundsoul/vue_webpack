@@ -2,8 +2,8 @@
 	<div>{{title}}</div>
 	<div>{{describe}}</div>
 </template>
-<script >
-	exports default {
+<script>
+	export default {
 		data (){
 			return {
 				title:'this is index',
