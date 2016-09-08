@@ -46,5 +46,6 @@ module.exports={
 		noInfo:true,
 		historyApiFallback:true,
 		port:8090
-	}
+	},
+	devtool:'#eval-source-map'
 };
