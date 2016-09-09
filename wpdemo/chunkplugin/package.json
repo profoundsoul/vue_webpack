@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "bundle-loader": "^0.5.4",
+    "html-webpack-plugin": "^2.22.0",
     "webpack": "^1.13.2"
   },
   "scripts": {
