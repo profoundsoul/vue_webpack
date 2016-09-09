@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>for和event</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="pic">
+    <div v-for="image in imgs"
+            style="margin-bottom:5px;border: 1px solid mediumpurple;position: relative;margin-left:5px;;border-radius:5px;text-align: center;float: left;">
+        <img v-bind:src="image.src" v-bind:alt="image.tips" width="200" height="200"/>
+        <br/>
+        <span>{{image.title}}</span>
+        <i  v-on:click="delImages($index,$event)" style="position: absolute;top: 5px;right: 5px;font-size: 16px;cursor:pointer;">X</i>
+    </div>
+    <button v-on:click="addImage" v-bind:data-value="addCode">新增一张图片</button>
+</div>
+<script>
+    (function(){
+        var vm = new Vue({
+            el:'#pic',
+            data:{
+                imgs:[{
+                     src:'../../images/test.jpg',
+                    title:'111111111',
+                    tips:'图片1未找到'
+                },{
+                    src:'../../images/test2.jpg',
+                    title:'2222222',
+                    tips:'图片2未找到'
+                },{
+                        src:'../../images/test.jpg',
+                        title:'3333333',
+                    tips:'图片3未找到'
+                    }
+                ],
+                addCode:'test.jpg'
+            },
+            methods:{
+                delImages:function(idx,e) {
+                    this.imgs.splice(idx,1);
+                },
+                addImage:function(){
+                    var len = this.imgs.length;
+                    if(this.addCode === 'test.jpg') {
+                        this.addCode = 'test2.jpg';
+                        this.imgs.push({
+                            src:'../../images/test2.jpg',
+                            title:len+''+len+len+len+len,
+                            tips:'图片'+len+'未找到'
+                        });
+                    }else{
+                        this.addCode = 'test.jpg';
+                        this.imgs.push({
+                            src:'../../images/test.jpg',
+                            title:len+''+len+len+len+len,
+                            tips:'图片'+len+'未找到'
+                        });
+                    }
+                }
+            }
+        });
+    }())
+</script>
+</body>
+</html>

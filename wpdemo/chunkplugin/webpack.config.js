@@ -37,10 +37,11 @@ module.exports={
         //libraryTarget: "umd"
     },
     plugins:[
-        allCommonChunk
+        new webpack.optimize.CommonsChunkPlugin('commin.js')
     ],
-    externals:{
-        jquery: 'jQuery',
-        underscore:'_'
+    devServer:{
+        noInfo:true,
+        historyApiFallback:true,
+        port:8089
     }
 };
